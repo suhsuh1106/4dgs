@@ -233,7 +233,7 @@ if __name__ == '__main__':
     
     for video in videos:
         cam_name = video.split('/')[-1].split('.')[-2]
-        do_system(f"ffmpeg -i {video} -start_number 0 {images_path}/{cam_name}_%04d.png")
+        do_system(f"ffmpeg -i {video} -start_number 0 -r 10 {images_path}/{cam_name}_%04d.png")
         
     # load data
     images = [f[len(args.path):] for f in sorted(glob.glob(os.path.join(args.path, "images/", "*"))) if f.lower().endswith('png') or f.lower().endswith('jpg') or f.lower().endswith('jpeg')]

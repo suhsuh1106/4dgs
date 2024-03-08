@@ -9,7 +9,7 @@ exhaust_test: True
 
 ModelParams:
   sh_degree: 3
-  source_path: "data/dnerf/bouncingballs"
+  source_path: "/home/suh1106/dataset/DNeRF/bouncingballs/"
   model_path: "output/dnerf/bouncingballs/"
   images: "images"
   resolution: 2

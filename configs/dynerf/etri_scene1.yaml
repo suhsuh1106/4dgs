@@ -6,11 +6,12 @@ rot_4d: True
 force_sh_3d: False
 batch_size: 4
 exhaust_test: True
+split_densify_prune : True
 
 ModelParams:
   sh_degree: 3
-  source_path: "/home/suh1106/dataset/DyNeRF_dataset/coffee_martini/"
-  model_path: "output/N3V/coffee_martini"
+  source_path: "/home/suh1106/dataset/etri/scene1/"
+  model_path: "output/etri/scene1_1"
   images: "images"
   resolution: 2
   white_background: False
@@ -32,7 +33,7 @@ PipelineParams:
   eval_shfs_4d: True
 
 OptimizationParams:
-  iterations: 30_000
+  iterations: 20_000
   position_lr_init: 0.00016
   position_t_lr_init: -1.0
   position_lr_final: 0.0000016
@@ -48,10 +49,10 @@ OptimizationParams:
   densification_interval: 100
   opacity_reset_interval: 3000
   densify_from_iter: 500
-  densify_until_iter: 15_000
+  densify_until_iter: 10_000
   densify_grad_threshold: 0.0002
   densify_grad_t_threshold: 0.0002 / 40 # 想办法用上
-  densify_until_num_points: -1
+  densify_until_num_points: 2_200_000
   final_prune_from_iter: -1
   sh_increase_interval: 1000
   lambda_opa_mask: 0.0
